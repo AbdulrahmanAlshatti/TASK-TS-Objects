@@ -33,12 +33,18 @@ interface ReviewedBook extends Book {
  *  //        reviews: [{ reviewer: "Alice", comment: "A thought-provoking novel!" }]
  *  //      }
  */
+
+
 function addReview(
   book: ReviewedBook,
   reviewer: string,
   comment: string
 ): ReviewedBook {
-  // write your code here...
+  // write your code here...  
+  if(book.reviews == undefined) 
+    book.reviews = [{reviewer, comment}]
+  else
+    book.reviews?.push ({reviewer, comment})
 
   return book;
 }
